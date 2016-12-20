@@ -13,7 +13,7 @@ func GetDevices() (*[]dbus.ObjectPath, error) {
 
 	obj := conn.Object("org.freedesktop.NetworkManager", "/org/freedesktop/NetworkManager")
 	var s interface{}
-	err = obj.Call("org.freedesktop.NetworkManager.GetAllDevices", 0).Store(&s)
+	err = obj.Call("org.freedesktop.NetworkManager.GetDevices", 0).Store(&s)
 	if err != nil {
 		return nil, err
 	}

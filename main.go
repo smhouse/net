@@ -14,7 +14,7 @@ func main() {
 
 	obj := conn.Object("org.freedesktop.NetworkManager", "/org/freedesktop/NetworkManager/Settings")
 	var s interface{}
-	err = obj.Call("ListConnections", 0).Store(&s)
+	err = obj.Call("org.freedesktop.NetworkManager.Settings.ListConnections", 0).Store(&s)
 	if err != nil {
 		log.Fatalln(err)
 	}

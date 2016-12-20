@@ -20,6 +20,13 @@ func main() {
 	}
 	log.Println(s)
 
+	v, err := obj.GetProperty("org.freedesktop.NetworkManager.Settings.Hostname")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	log.Printf("%v", v)
+
 	conn.BusObject().Call("org.freedesktop.DBus.AddMatch", 0,
 		"type='signal',path='/org/freedesktop/NetworkManager',member='StateChanged'")
 

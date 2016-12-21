@@ -12,6 +12,7 @@ func main() {
 	}
 
 	for _, d := range *devices {
-		log.Println(d)
+		log.Printf("%+v\n", d)
 	}
+
 }
